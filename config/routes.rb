@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :foods
   devise_for :users
+
+  resources :foods
   resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
