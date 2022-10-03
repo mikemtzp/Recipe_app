@@ -113,7 +113,7 @@ end
 
 ### Gabriel Fonseca
 
-- GitHub: [@Daf98](https://github.com/Gopxfs)
+- GitHub: [@Gopxfs](https://github.com/Gopxfs)
 - LinkedIn: [Gabriel Fonseca Sales](https://www.linkedin.com/in/gabriel-fonseca-sales/)
 
 ## 🤝 Contributing
