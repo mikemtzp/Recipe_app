@@ -8,6 +8,6 @@ class Food < ApplicationRecord
   validates :price, numericality: { greater_than_or_equal_to: 0 }
 
   def total_price
-    quantity*price
+    quantity * price
   end
 end
