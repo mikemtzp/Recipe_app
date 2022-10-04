@@ -10,4 +10,12 @@ class Recipe < ApplicationRecord
   def self.public_list
     Recipe.all.where(public: true)
   end
+
+  def total_price
+    sum = 0
+    recipe_foods.each do |recipe_food|
+      sum += recipe_food.total_price
+    end
+    sum
+  end
 end
