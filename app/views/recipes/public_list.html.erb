@@ -1,7 +1,9 @@
-<h1> Public list </h1>
+<h1> Public recipes </h1>
 
 <% @recipes.each do |recipe| %>
-  <div> <%= recipe.name %>
+  <%= link_to user_recipe_url(recipe.user, recipe), :action => 'go' do %>
+    <div> <%= recipe.name %>
 
-  </div>
+    </div>
+  <% end %>
 <% end %>
