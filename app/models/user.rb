@@ -10,6 +10,6 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   def list_foods
-    Food.where(:user_id => id)
+    Food.where(user_id: id)
   end
 end
