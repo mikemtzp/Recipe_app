@@ -1,9 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @recipe %>
+<div>
+  <h1> <%= @recipe.name %> </h1>
+  <p> <%= @recipe.preparation_time %>
+  <div>
+    <input type="checkbox" id="public">
+    <label for="public">Public</label>
+  </div>
+  <p> <%= @recipe.cooking_time %>
+  <p> <%= @recipe.description %>
+</div>
 
 <div>
   <%= link_to "Back to recipes", user_recipes_path %>
+  <%= link_to "Generate shopping list", user_recipes_path %>
   <%= link_to "Add ingredient", new_user_recipe_recipe_food_url(current_user, @recipe) %>
 </div>
 
