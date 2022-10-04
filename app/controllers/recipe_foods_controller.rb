@@ -13,7 +13,6 @@ class RecipeFoodsController < ApplicationController
   # GET /recipe_foods/new
   def new
     @recipe_food = RecipeFood.new
-
   end
 
   # GET /recipe_foods/1/edit
@@ -27,7 +26,9 @@ class RecipeFoodsController < ApplicationController
 
     respond_to do |format|
       if @recipe_food.save
-        format.html { redirect_to user_recipe_path(current_user, recipe), notice: 'Recipe food was successfully created.' }
+        format.html do
+          redirect_to user_recipe_path(current_user, recipe), notice: 'Recipe food was successfully created.'
+        end
         format.json { render :show, status: :created, location: @recipe_food }
       else
         format.html { render :new, status: :unprocessable_entity }
