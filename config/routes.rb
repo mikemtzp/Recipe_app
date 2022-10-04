@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   get 'public-recipes-list', to: 'recipes#public_list'
+  get 'general_shopping_list', to: 'recipes#shopping_list'
 
-  root to: "recipes#public_list"
+  root to: 'recipes#public_list'
 end
