@@ -5,5 +5,7 @@
 <div>
   <%= link_to "Edit this user", edit_user_path(@user) %> |
   <%= link_to "Back to users", users_path %>
-  <%= link_to "Food list", user_foods_url(current_user) %>
+  <% if @user == current_user %>
+    <%= link_to "Food list", user_foods_url(current_user) %>
+  <% end %>
 </div>
