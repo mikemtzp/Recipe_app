@@ -4,5 +4,4 @@ class Food < ApplicationRecord
 
   validates :name, presence: true
   validates :measurement_unit, presence: true
-  validates :price, precision: 2
 end
