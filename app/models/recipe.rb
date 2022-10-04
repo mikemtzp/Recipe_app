@@ -8,6 +8,6 @@ class Recipe < ApplicationRecord
   validates :description, presence: true
 
   def self.public_list
-    Recipe.where(public: true)
+    Recipe.all.where(public: true)
   end
 end
