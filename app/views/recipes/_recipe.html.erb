@@ -1,11 +1,13 @@
-<div>
-  <h2>
-    <%= recipe.name %>
-  </h2>
+<%= link_to user_recipe_url(current_user, recipe) do %>
+  <div>
+    <h2>
+      <%= recipe.name %>
+    </h2>
 
-  <p>
-    <%= recipe.description %>
-  </p>
+    <p>
+      <%= recipe.description %>
+    </p>
 
-  <%= button_to "Remove", user_recipe_path(current_user, recipe), method: :delete %>
-</div>
+    <%= button_to "Remove", user_recipe_path(current_user, recipe), method: :delete %>
+  </div>
+<% end %>
