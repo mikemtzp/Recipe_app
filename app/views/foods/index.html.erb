@@ -1,12 +1,9 @@
 <p style="color: green"><%= notice %></p>
 <%= link_to "<-- Back to user profile", user_url(current_user) %>
 
-<h1>Foods</h1>
-
+<%= link_to "New food", new_user_food_url %>
 <div id="foods">
   <% @foods.each do |food| %>
     <%= render food %>
   <% end %>
 </div>
-
-<%= link_to "New food", new_user_food_url %>
