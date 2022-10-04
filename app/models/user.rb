@@ -12,4 +12,8 @@ class User < ApplicationRecord
   def list_foods
     Food.where(user_id: id)
   end
+
+  def list_recipes
+    Recipe.where(user_id: id)
+  end
 end
