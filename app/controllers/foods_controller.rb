@@ -12,6 +12,7 @@ class FoodsController < ApplicationController
   # GET /foods/new
   def new
     @food = Food.new
+    @food.user = current_user
   end
 
   # GET /foods/1/edit
@@ -23,7 +24,7 @@ class FoodsController < ApplicationController
 
     respond_to do |format|
       if @food.save
-        format.html { redirect_to food_url(@food), notice: 'Food was successfully created.' }
+        format.html { redirect_to user_foods_url, notice: 'Food was successfully created.' }
         format.json { render :show, status: :created, location: @food }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -36,7 +37,7 @@ class FoodsController < ApplicationController
   def update
     respond_to do |format|
       if @food.update(food_params)
-        format.html { redirect_to food_url(@food), notice: 'Food was successfully updated.' }
+        format.html { redirect_to user_foods_url, notice: 'Food was successfully updated.' }
         format.json { render :show, status: :ok, location: @food }
       else
         format.html { render :edit, status: :unprocessable_entity }
