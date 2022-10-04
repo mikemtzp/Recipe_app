@@ -21,12 +21,13 @@ class RecipeFoodsController < ApplicationController
 
   # POST /recipe_foods or /recipe_foods.json
   def create
+    recipe = Recipe.find(params[:id])
     @recipe_food = RecipeFood.new(recipe_food_params)
-    @recipe_food.user = current_user
+    @recipe_food.recipe = recipe
 
     respond_to do |format|
       if @recipe_food.save
-        format.html { redirect_to recipe_food_url(@recipe_food), notice: 'Recipe food was successfully created.' }
+        format.html { redirect_to user_recipe_path(@current_user, recipe), notice: 'Recipe food was successfully created.' }
         format.json { render :show, status: :created, location: @recipe_food }
       else
         format.html { render :new, status: :unprocessable_entity }
