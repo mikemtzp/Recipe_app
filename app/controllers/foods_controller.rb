@@ -12,7 +12,6 @@ class FoodsController < ApplicationController
   # GET /foods/new
   def new
     @food = Food.new
-    @food.user = current_user
   end
 
   # GET /foods/1/edit
@@ -21,6 +20,7 @@ class FoodsController < ApplicationController
   # POST /foods or /foods.json
   def create
     @food = Food.new(food_params)
+    @food.user = current_user
 
     respond_to do |format|
       if @food.save
