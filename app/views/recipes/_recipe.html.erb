@@ -8,6 +8,8 @@
       <%= recipe.description %>
     </p>
 
-    <%= button_to "Remove", user_recipe_path(current_user, recipe), method: :delete %>
+    <% if can? :destroy, recipe %>
+      <%= button_to "Remove", user_recipe_path(current_user, recipe), method: :delete %>
+    <% end %>
   </div>
 <% end %>

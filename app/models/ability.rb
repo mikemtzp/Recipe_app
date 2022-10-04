@@ -4,7 +4,8 @@ class Ability
   def initialize(user)
     return unless user.present?
 
-    can :manage, Recipe
+    can :read, Recipe
+    can :destroy, Recipe, user: user
 
     # The third argument is an optional hash of conditions to further filter the
     # objects.
