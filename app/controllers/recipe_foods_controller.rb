@@ -54,7 +54,7 @@ class RecipeFoodsController < ApplicationController
     @recipe_food.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_recipe_url }
+      format.html { redirect_back(fallback_location: user_recipe_url) }
       format.json { head :no_content }
     end
   end
