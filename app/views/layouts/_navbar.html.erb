@@ -1,3 +1,19 @@
 <nav>
-nav
+  <ul>
+    <li>
+      <%= link_to 'Public recipes',  %>
+    </li>
+
+    <li>
+      <%= link_to 'Your recipes' %>
+    </li>
+
+    <li>
+      <%= link_to 'Food list' %>
+    </li>
+
+    <li>
+      <%= link_to 'Profile', user_url(current_user) %>
+    </li>
+  </ul>
 </nav>
