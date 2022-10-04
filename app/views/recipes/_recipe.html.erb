@@ -1,8 +1,9 @@
-<%= link_to user_recipe_url(current_user, recipe) do %>
   <div>
+  <%= link_to user_recipe_url(current_user, recipe) do %>
     <h2>
       <%= recipe.name %>
     </h2>
+  <% end %>
 
     <p>
       <%= recipe.description %>
@@ -12,4 +13,3 @@
       <%= button_to "Remove", user_recipe_path(current_user, recipe), method: :delete %>
     <% end %>
   </div>
-<% end %>
