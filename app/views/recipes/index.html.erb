@@ -1,3 +1,6 @@
+<%= link_to "<-- Back to user profile", user_url(current_user) %>
+<%= link_to "New recipe", new_user_recipe_path %>
+
 <h1>Recipes</h1>
 
 <div id="recipes">
@@ -6,4 +9,3 @@
   <% end %>
 </div>
 
-<%= link_to "New recipe", new_user_recipe_path %>
