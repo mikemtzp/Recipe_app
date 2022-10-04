@@ -7,7 +7,7 @@ class Recipe < ApplicationRecord
   validates :cooking_time, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :description, presence: true
 
-  def public_list
+  def self.public_list
     Recipe.where(public: true)
   end
 end
