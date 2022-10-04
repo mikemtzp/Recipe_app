@@ -3,9 +3,13 @@
 
 <h1>Recipes</h1>
 
-<div id="recipes">
-  <% @recipes.each do |recipe| %>
-    <%= render recipe %>
-  <% end %>
-</div>
+<% if @recipes.empty? %>
+  <p>Your recipes list is empty.</p>
+<% else %>
+  <div id="recipes">
+    <% @recipes.each do |recipe| %>
+      <%= render recipe %>
+    <% end %>
+  </div>
+<% end %>
 
