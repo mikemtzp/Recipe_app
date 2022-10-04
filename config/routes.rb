@@ -7,9 +7,8 @@ Rails.application.routes.draw do
       resources :recipe_foods
     end
   end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get 'public-list', to: 'recipes#public_list'
+
   root to: "users#index"
 end
