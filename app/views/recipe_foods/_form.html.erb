@@ -1,4 +1,4 @@
-<%= form_with model: recipe_food, url: user_recipe_recipe_foods_path, method: :post do |form| %>
+<%= form_with model: @recipe_food, url: user_recipe_recipe_foods_path, method: :post do |form| %>
   <% if recipe_food.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(recipe_food.errors.count, "error") %> prohibited this recipe_food from being saved:</h2>
@@ -15,8 +15,8 @@
     <%= form.label 'Ingredient', style: "display: block" %>
     <%= form.text_field :food_id, list: 'datalist_recipe_food' %>
     <datalist id='datalist_recipe_food'>
-      <% @foods.each do |food| %>
-        <option value="<%= food.name %>"></option>
+      <% current_user.foods.each do |food| %>
+        <option value=<%= food.id %>><%= food.name %></option>
       <% end %>
     </datalist>
   </div>

@@ -13,7 +13,7 @@ class RecipeFoodsController < ApplicationController
   # GET /recipe_foods/new
   def new
     @recipe_food = RecipeFood.new
-    @foods = current_user.list_foods
+
   end
 
   # GET /recipe_foods/1/edit
@@ -21,13 +21,13 @@ class RecipeFoodsController < ApplicationController
 
   # POST /recipe_foods or /recipe_foods.json
   def create
-    recipe = Recipe.find(params[:id])
-    @recipe_food = RecipeFood.new(recipe_food_params)
+    recipe = Recipe.find(params[:recipe_id])
+    @recipe_food = RecipeFood.new(params.require(:recipe_food).permit(:quantity, :recipe, :food_id))
     @recipe_food.recipe = recipe
 
     respond_to do |format|
       if @recipe_food.save
-        format.html { redirect_to user_recipe_path(@current_user, recipe), notice: 'Recipe food was successfully created.' }
+        format.html { redirect_to user_recipe_path(current_user, recipe), notice: 'Recipe food was successfully created.' }
         format.json { render :show, status: :created, location: @recipe_food }
       else
         format.html { render :new, status: :unprocessable_entity }
