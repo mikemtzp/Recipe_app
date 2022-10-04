@@ -1,9 +1,14 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   # GET /recipes or /recipes.json
   def index
     @recipes = current_user.list_recipes
+  end
+
+  def public_list
+    @recipes = Recipe.public_list
   end
 
   # GET /recipes/1 or /recipes/1.json
