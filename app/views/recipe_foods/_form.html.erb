@@ -13,12 +13,11 @@
 
   <div>
     <%= form.label 'Ingredient', style: "display: block" %>
-    <%= form.text_field :food_id, list: 'datalist_recipe_food' %>
-    <datalist id='datalist_recipe_food'>
+    <select name="recipe_food[food_id]">
       <% current_user.foods.each do |food| %>
         <option value=<%= food.id %>><%= food.name %></option>
       <% end %>
-    </datalist>
+    </select>
   </div>
 
   <div>
