@@ -3,10 +3,8 @@
 
 <%= link_to "New food", new_user_food_url %>
 
-<% if @foods.each %>
-<p> Your food list is empty.</p>
-
-
+<% if @foods.empty? %>
+  <p> Your food list is empty.</p>
 <% else %>
   <table id="food-list">
     <tr>
