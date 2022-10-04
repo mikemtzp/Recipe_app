@@ -3,15 +3,21 @@
 
 <%= link_to "New food", new_user_food_url %>
 
-<table id="food-list">
-  <tr>
-    <th>Food</th>
-    <th>Measurement unit</th>
-    <th>Price</th>
-    <th>Quantity</th>
-    <th>Actions</th>
-  </tr>
-    <% @foods.each do |food| %>
-      <%= render food %>
-    <% end %>
-</table>
+<% if @foods.each %>
+<p> Your food list is empty.</p>
+
+
+<% else %>
+  <table id="food-list">
+    <tr>
+      <th>Food</th>
+      <th>Measurement unit</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Actions</th>
+    </tr>
+      <% @foods.each do |food| %>
+        <%= render food %>
+      <% end %>
+  </table>
+<% end %>
