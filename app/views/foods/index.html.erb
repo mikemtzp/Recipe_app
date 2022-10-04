@@ -2,8 +2,16 @@
 <%= link_to "<-- Back to user profile", user_url(current_user) %>
 
 <%= link_to "New food", new_user_food_url %>
-<div id="foods">
-  <% @foods.each do |food| %>
-    <%= render food %>
-  <% end %>
-</div>
+
+<table id="food-list">
+  <tr>
+    <th>Food</th>
+    <th>Measurement unit</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Actions</th>
+  </tr>
+    <% @foods.each do |food| %>
+      <%= render food %>
+    <% end %>
+</table>
