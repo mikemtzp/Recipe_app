@@ -10,5 +10,5 @@ Rails.application.routes.draw do
 
   get 'public-recipe-list', to: 'recipes#public_list'
 
-  root to: "users#index"
+  root to: "recipes#public_list"
 end
