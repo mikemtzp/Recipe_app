@@ -8,4 +8,8 @@ class User < ApplicationRecord
   has_many :recipes, dependent: :destroy
 
   validates :name, presence: true
+
+  def list_foods
+    Food.where(:user_id => id)
+  end
 end
