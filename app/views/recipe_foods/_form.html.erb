@@ -12,18 +12,18 @@
   <% end %>
 
   <div>
+    <%= form.label 'Ingredient', style: "display: block" %>
+    <%= form.text_field :food_id, list: 'datalist_recipe_food' %>
+    <datalist id='datalist_recipe_food'>
+      <% @foods.each do |food| %>
+        <option value="<%= food.name %>"></option>
+      <% end %>
+    </datalist>
+  </div>
+
+  <div>
     <%= form.label :quantity, style: "display: block" %>
     <%= form.number_field :quantity %>
-  </div>
-
-  <div>
-    <%= form.label :recipes_id, style: "display: block" %>
-    <%= form.text_field :recipes_id %>
-  </div>
-
-  <div>
-    <%= form.label :foods_id, style: "display: block" %>
-    <%= form.text_field :foods_id %>
   </div>
 
   <div>
