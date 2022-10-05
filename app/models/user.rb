@@ -16,4 +16,20 @@ class User < ApplicationRecord
   def list_recipes
     Recipe.where(user_id: id)
   end
+
+  def total_recipes_price
+    sum = 0
+    list_recipes.each do |recipe|
+      sum += recipe.total_price
+    end
+    sum
+  end
+
+  def total_recipes_ingredients
+    ingredients = 0
+    list_recipes.each do |recipe|
+      ingredients += recipe.foods.count
+    end
+    ingredients
+  end
 end

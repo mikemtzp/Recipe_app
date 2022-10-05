@@ -23,7 +23,7 @@ class RecipesController < ApplicationController
   end
 
   def shopping_list
-    
+    @recipes = current_user.list_recipes
   end
 
   # GET /recipes/1/edit
