@@ -32,6 +32,7 @@ class User < ApplicationRecord
   def new_ingredients_information
     all_ingredients, all_ingredients_price = user_recipes_information
     new_ingredients = []
+    new_ingredients_price = 0
     list_foods.each do |food|
       ingredients_quantity, ingredients_price = 0
       ingredients = all_ingredients.select { |e| e.food_id = food.id }
@@ -46,6 +47,7 @@ class User < ApplicationRecord
 
       if new_ingredient_quantity > 0
         new_ingredients.push({ name: food.name, quantity: new_ingredient_quantity, price: new_ingredient_price })
+        new_ingredients_price += new_ingredient_price
       end
     end
     new_ingredients
