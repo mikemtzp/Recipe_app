@@ -24,7 +24,7 @@ class RecipesController < ApplicationController
 
   def shopping_list
     @recipes = current_user.list_recipes
-    @new_ingredients_data = current_user.new_ingredients_information
+    @new_ingredients_data, new_ingredients_total_price = current_user.new_ingredients_information
   end
 
   # GET /recipes/1/edit
