@@ -26,10 +26,23 @@ class User < ApplicationRecord
   end
 
   def total_recipes_ingredients
-    ingredients = 0
+    all_ingredients = []
     list_recipes.each do |recipe|
-      ingredients += recipe.foods.count
+      all_ingredients.push(recipe.recipe_foods)
     end
-    ingredients
+    all_ingredients.flatten!
+  end
+
+  def new_ingredients_total_price
+    total_recipes_price
+  end
+
+  def new_ingredients_total_quantity
+
+  end
+
+  private
+  def compare_foods(food, ingredient)
+
   end
 end
