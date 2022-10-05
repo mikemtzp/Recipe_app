@@ -35,7 +35,7 @@ class User < ApplicationRecord
     new_ingredients_price = 0
     list_foods.each do |food|
       ingredients_quantity = 0
-      ingredients = all_ingredients.select { |e| e.food_id = food.id }
+      ingredients = all_ingredients.select { |e| e.food_id == food.id }
       next if ingredients.empty?
 
       ingredients.each do |i|
