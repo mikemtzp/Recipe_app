@@ -30,7 +30,7 @@ class User < ApplicationRecord
   end
 
   def new_ingredients_information
-    all_ingredients, total_price = user_recipes_information
+    all_ingredients, all_ingredients_price = user_recipes_information
     new_ingredients = []
     list_foods.each do |food|
       ingredients_quantity, ingredients_price = 0
@@ -41,8 +41,8 @@ class User < ApplicationRecord
         ingredients_quantity += i.quantity
       end
 
-      new_ingredient_quantity = food.quantity - ingredients_quantity
-      new_ingredient_price = food.total_price - ingredients_quantity*food.price
+      new_ingredient_quantity = ingredients_quantity - food.quantity
+      new_ingredient_price =  ingredients_quantity*food.price - food.total_price
 
       if new_ingredient_quantity > 0
         new_ingredients.push({ name: food.name, quantity: new_ingredient_quantity, price: new_ingredient_price })
