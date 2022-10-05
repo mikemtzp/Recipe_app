@@ -22,6 +22,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
+  def shopping_list
+    
+  end
+
   # GET /recipes/1/edit
   def edit; end
 
