@@ -13,7 +13,7 @@ body {
 
   h2,
   p {
-    margin: 0;
+    margin-bottom: 1rem;
   }
 }
 
@@ -34,6 +34,14 @@ body {
   }
 }
 
+.sign-up {
+  margin-bottom: 1rem;
+}
+
 .new_user {
   @include flex(column, center);
+
+  & > * {
+    margin-bottom: 1rem;
+  }
 }
