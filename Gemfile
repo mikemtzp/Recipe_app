@@ -15,6 +15,9 @@ gem 'devise'
 # Rubocop
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+# Icon library
+gem "font-awesome-sass", "~> 6.2.0"
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
