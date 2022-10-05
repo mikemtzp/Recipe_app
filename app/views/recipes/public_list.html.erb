@@ -1,6 +1,6 @@
 <h1> Public recipes </h1>
 
-<% @recipes.includes(:user, :recipe_foods).each do |recipe| %>
+<% @recipes.includes(:user).each do |recipe| %>
   <%= link_to user_recipe_url(recipe.user, recipe), :action => 'go' do %>
     <div> 
       <p> <%= recipe.name %> </p>
