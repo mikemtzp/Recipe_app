@@ -50,6 +50,6 @@ class User < ApplicationRecord
         new_ingredients_price += new_ingredient_price
       end
     end
-    new_ingredients, new_ingredients_price
+    return new_ingredients, new_ingredients_price
   end
 end
