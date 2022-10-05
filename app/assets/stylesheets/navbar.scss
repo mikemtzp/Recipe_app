@@ -2,7 +2,7 @@
 
 nav {
   @include flex(row, center);
-  background-color: rgba(255, 255, 255, 0);
+  background-color: $main-color;
   position: fixed;
   top: 0;
   width: 100vw;
@@ -28,7 +28,7 @@ nav {
         text-decoration: none;
 
         &:hover {
-          color: rgb(212, 173, 99);
+          color: $secondary-color;
         }
       }
     }
