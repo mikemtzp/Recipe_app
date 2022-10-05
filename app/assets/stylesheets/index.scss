@@ -1,17 +1,5 @@
 @import 'mixins';
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background: $background-color;
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
   min-height: 100vh;
   background: $background-color;
   @include flex(column, center);
@@ -19,12 +7,6 @@ body {
   h2,
   p {
     margin: 0;
-  }
-}
-
-.login-container {
-  @include flex(column, center);
-    margin-bottom: 1rem;
   }
 }
 
