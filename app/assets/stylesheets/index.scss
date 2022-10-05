@@ -1,5 +1,19 @@
 @import 'mixins';
 
 body {
-  background-color: $main-color;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: $background-color;
+
+  @include flex(column, center);
+
+  h2,
+  p {
+    margin: 0;
+  }
+}
+
+.login-container {
+  @include flex(column, center);
 }
