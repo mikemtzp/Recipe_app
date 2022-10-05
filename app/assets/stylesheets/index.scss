@@ -1,28 +1,24 @@
 @import 'mixins';
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   min-height: 100vh;
   background: $background-color;
+
   @include flex(column, center);
 
   h2,
   p {
-    margin-bottom: 1rem;
+    margin: 0;
   }
 }
 
 .flex-start {
-  align-self: flex-start
+  align-self: flex-start;
 }
 
 .login-container {
   @include flex(column, center);
+
   width: 30%;
   padding: 2rem;
   background: rgba(200, 200, 200, 0.2);

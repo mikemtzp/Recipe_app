@@ -13,7 +13,7 @@ class Recipe < ApplicationRecord
 
   def total_price
     sum = 0
-    recipe_foods.each { |recipe_food| sum += recipe_food.total_price }
+    recipe_foods.includes(:food).each { |recipe_food| sum += recipe_food.total_price }
     sum
   end
 end
