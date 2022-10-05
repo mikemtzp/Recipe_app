@@ -17,11 +17,23 @@ body {
   }
 }
 
+.flex-start {
+  align-self: flex-start
+}
+
 .login-container {
   @include flex(column, center);
-  width: 40%;
+  width: 30%;
   padding: 2rem;
   background: rgba(200, 200, 200, 0.2);
   border-radius: 20px;
   box-shadow: 20px 15px 80px -25px #000;
+
+  &-links {
+    @include flex(column, center);
+  }
+}
+
+.new_user {
+  @include flex(column, center);
 }
