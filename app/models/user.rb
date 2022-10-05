@@ -29,16 +29,26 @@ class User < ApplicationRecord
     return all_ingredients.flatten!, all_ingredients_price
   end
 
-  def new_ingredients_total_price
-    total_recipes_price
-  end
+  def new_ingredients_information
+    all_ingredients, total_price = user_recipes_information
+    new_ingredients = []
+    list_foods.each do |food|
+      ingredients_quantity, ingredients_price = 0
+      ingredients = all_ingredients.select { |e| e.food_id = food.id }
+      next if ingredients.empty?
 
-  def new_ingredients_total_quantity
+      ingredients.each do |i|
+        ingredients_quantity += i.quantity
+        ingredients_price += i.price
+      end
 
-  end
+      new_ingredient_quantity = food.quantity - ingredients_quantity
+      new_ingredient_price = food.total_price - ingredients_price
 
-  private
-  def compare_food_with_ingredient(food)
-
+      if new_ingredient_quantity > 0
+        new_ingredients.push({ name: food.name, quantity: new_ingredient_quantity, price: new_ingredient_price })
+      end
+    end
+    new_ingredients
   end
 end
