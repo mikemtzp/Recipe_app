@@ -2,7 +2,7 @@
 
 nav {
   @include flex(row, center);
-  background-color: $secondary-color;
+  background-color: rgba(255, 255, 255, 0);
   position: fixed;
   top: 0;
   width: 100vw;
