@@ -1,11 +1,14 @@
 @import 'mixins';
 
-body {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: $background-color;
+}
 
+body {
+  min-height: 100vh;
+  background: $background-color;
   @include flex(column, center);
 
   h2,
@@ -16,4 +19,9 @@ body {
 
 .login-container {
   @include flex(column, center);
+  width: 40%;
+  padding: 2rem;
+  background: rgba(200, 200, 200, 0.2);
+  border-radius: 20px;
+  box-shadow: 20px 15px 80px -25px #000;
 }
