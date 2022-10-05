@@ -1,1 +1,10 @@
 $main-color: rgba(150, 147, 108, 0.603);
+$background-color: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+
+@mixin flex ($position, $justify) {
+  display: flex;
+  flex-direction: $position;
+  justify-content: $justify;
+  align-items: center;
+  margin: auto;
+}
