@@ -1,0 +1,26 @@
+<h1> Shopping List </h1>
+
+<div>
+  <p>Amount of food items to buy: <%= @new_ingredients_data.length %></p>
+  <p>Total value needed: <%= @new_ingredients_total_price %></p>
+</div>
+
+<% if @new_ingredients_data.empty?%>
+  <p>You have all the ingredients necessary to do all your recipes!</p>
+<% else %>
+  <table>
+    <tr>
+      <th> Food </th>
+      <th> Quantity </th>
+      <th> Price </th>
+    </tr>
+
+    <% @new_ingredients_data.each do |ingredient| %>
+    <tr>
+      <td> <%= ingredient[:name] %> </td>
+      <td> <%= ingredient[:quantity] %> </td>
+      <td> <%= ingredient[:price] %> </td>
+    </tr>
+    <% end %>
+  </table>
+<% end %>

@@ -20,11 +20,15 @@ class RecipeFoodsController < ApplicationController
 
   # POST /recipe_foods or /recipe_foods.json
   def create
-    @recipe_food = RecipeFood.new(recipe_food_params)
+    recipe = Recipe.find(params[:recipe_id])
+    @recipe_food = RecipeFood.new(params.require(:recipe_food).permit(:quantity, :recipe, :food_id))
+    @recipe_food.recipe = recipe
 
     respond_to do |format|
       if @recipe_food.save
-        format.html { redirect_to recipe_food_url(@recipe_food), notice: 'Recipe food was successfully created.' }
+        format.html do
+          redirect_to user_recipe_path(current_user, recipe), notice: 'Recipe food was successfully created.'
+        end
         format.json { render :show, status: :created, location: @recipe_food }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -51,7 +55,7 @@ class RecipeFoodsController < ApplicationController
     @recipe_food.destroy
 
     respond_to do |format|
-      format.html { redirect_to recipe_foods_url, notice: 'Recipe food was successfully destroyed.' }
+      format.html { redirect_back(fallback_location: user_recipe_url) }
       format.json { head :no_content }
     end
   end
