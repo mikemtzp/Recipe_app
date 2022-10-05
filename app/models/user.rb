@@ -17,20 +17,16 @@ class User < ApplicationRecord
     Recipe.where(user_id: id)
   end
 
-  def total_recipes_price
-    sum = 0
-    list_recipes.each do |recipe|
-      sum += recipe.total_price
-    end
-    sum
-  end
-
-  def total_recipes_ingredients
+  def user_recipes_information
     all_ingredients = []
-    list_recipes.each do |recipe|
+    all_ingredients_price = 0
+
+    list_recipes.includes(:recipe_foods).each do |recipe|
       all_ingredients.push(recipe.recipe_foods)
+      all_ingredients_price += recipe.total_price
     end
-    all_ingredients.flatten!
+
+    return all_ingredients.flatten!, all_ingredients_price
   end
 
   def new_ingredients_total_price
@@ -42,7 +38,7 @@ class User < ApplicationRecord
   end
 
   private
-  def compare_foods(food, ingredient)
+  def compare_food_with_ingredient(food)
 
   end
 end
