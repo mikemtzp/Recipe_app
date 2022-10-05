@@ -2,12 +2,12 @@
 
 <div>
   <h1> <%= @recipe.name %> </h1>
-  <p> <%= @recipe.preparation_time %>
+  <p> Preparation time: <%= @recipe.preparation_time %> minute(s). </p>
   <div>
     <input type="checkbox" id="public">
     <label for="public">Public</label>
   </div>
-  <p> <%= @recipe.cooking_time %>
+  <p> Cooking time: <%= @recipe.cooking_time %> minute(s). </p>
   <p> <%= @recipe.description %>
 </div>
 
