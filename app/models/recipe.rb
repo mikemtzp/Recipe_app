@@ -8,7 +8,7 @@ class Recipe < ApplicationRecord
   validates :description, presence: true
 
   def self.public_list
-    Recipe.all.where(public: true)
+    Recipe.all.where(public: true).order('created_at DESC')
   end
 
   def total_price
