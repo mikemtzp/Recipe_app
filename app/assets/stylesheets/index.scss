@@ -10,7 +10,7 @@ body {
   h2 { margin: 0 0 1.5rem 0; }
   p { margin: 0 0 1rem 0; }
 
-  h1 { 
+  h1 {
     margin: 0 0 1.5rem 0;
     font-size: $section-title;
   }
@@ -31,6 +31,7 @@ a {
 .login-container {
   @include flex(column, center);
   @include box(2rem);
+
   width: 30%;
   margin: auto;
 
@@ -43,8 +44,7 @@ a {
   margin-bottom: 1rem;
 
   &-link {
-    @include bold-text
-  }
+    @include bold-text; }
 }
 
 .new_user {
@@ -102,6 +102,7 @@ a {
 
 .recipe {
   @include box(1rem);
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -116,4 +117,3 @@ a {
 
 .no-margin { margin: 0; }
 .italic { font-style: italic; }
-

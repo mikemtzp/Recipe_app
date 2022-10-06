@@ -2,6 +2,7 @@
 
 #public-recipes-list {
   @include flex(column, center);
+
   width: 80%;
 }
 
@@ -13,6 +14,7 @@
 .public-recipe {
   @include flex(row, space-between);
   @include box(1rem);
+
   text-align: center;
 
   &-section {
@@ -26,4 +28,4 @@
   }
 }
 
-span { @include bold-text }
+span { @include bold-text; }
