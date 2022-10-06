@@ -7,12 +7,13 @@
     <% end %>
 
     <% if can? :destroy, recipe %>
-      <%= button_to "Remove", user_recipe_path(current_user, recipe), method: :delete, class: "login-button" %>
+      <%= button_to "Remove", user_recipe_path(current_user, recipe), method: :delete, class: "login-button remove" %>
     <% end %>
   </div>
 
   <div class="recipe-title">
-    <p class="no-margin">
+  <p class="no-margin italic">Description:</p>
+    <p class="no-margin description">
       <%= recipe.description %>
     </p>
   </div>
