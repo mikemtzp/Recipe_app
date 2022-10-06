@@ -27,3 +27,9 @@ $font-title: 2rem;
   font-weight: bolder;
   color: $main-color;
 }
+
+@mixin trim-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
