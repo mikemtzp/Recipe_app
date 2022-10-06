@@ -10,7 +10,9 @@
 
   <div>
     <%= link_to "Generate shopping list", general_shopping_list_path %>
-    <%= link_to "Add ingredient", new_user_recipe_recipe_food_url(current_user, @recipe) %>
+    <% if can? :modify, @reecipe %>
+      <%= link_to "Add ingredient", new_user_recipe_recipe_food_url(current_user, @recipe) %>
+    <% end %>
   </div>
 
   <table class="ingredients-list">
