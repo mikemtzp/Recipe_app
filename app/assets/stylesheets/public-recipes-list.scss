@@ -28,4 +28,10 @@
   }
 }
 
+.public-recipe-section__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 span { @include bold-text; }
