@@ -9,14 +9,19 @@
   </div>
 
   <div>
-    <%= link_to "Generate shopping list", general_shopping_list_path %>
+    <%= link_to "Generate shopping list", general_shopping_list_path, class: "login-button" %>
     <% if can? :modify, @recipe %>
-      <%= link_to "Add ingredient", new_user_recipe_recipe_food_url(current_user, @recipe) %>
-      <%= link_to 'Edit recipe', edit_user_recipe_url %>
+      <%= link_to "Add ingredient", new_user_recipe_recipe_food_url(current_user, @recipe), class: "login-button" %>
+      <%= link_to 'Edit recipe', edit_user_recipe_url, class: "login-button" %>
     <% end %>
   </div>
 
-  <table class="ingredients-list">
+  <hr>
+
+  <% if @recipe.recipe_foods.count < 1 %>
+    <p> The ingredient list is empty. </p>
+  <% else %>
+    <table class="ingredients-list table">
       <tr>
         <th>Food</th>
         <th>Quantity</th>
@@ -31,9 +36,10 @@
             <td> <%= ingredient.quantity %> </td>
             <td> <%= ingredient.total_price %> </td>
             <% if can? :modify, @recipe %>
-              <td> <%= button_to 'Remove', user_recipe_recipe_food_path(current_user, @recipe, ingredient), method: :delete %> </td>
+              <td> <%= button_to 'Delete', user_recipe_recipe_food_path(current_user, @recipe, ingredient), method: :delete, class: 'remove action-button' %> </td>
             <% end %>
           </tr>
         <% end %>
     </table>
-  </section>
+  <% end %>
+</section>
