@@ -130,5 +130,17 @@ hr {
   margin-top: 35px;
 }
 
+.action-button {
+  border: none;
+  border-radius: 5px;
+  padding: 3px 8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $main-color;
+    color: white;
+  }
+}
+
 .no-margin { margin: 0; }
 .italic { font-style: italic; }
