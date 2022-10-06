@@ -1,0 +1,5 @@
+@import 'mixins';
+
+#public-recipes-list {
+  @include flex(row, center);
+}

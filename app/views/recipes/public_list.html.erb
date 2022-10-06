@@ -1,13 +1,15 @@
-<h1> Public recipes </h1>
+<section id="public-recipes-list">
+  <h1> Public recipes </h1>
 
-<% @recipes.includes(:user, :recipe_foods).each do |recipe| %>
-  <%= link_to user_recipe_url(recipe.user, recipe), :action => 'go' do %>
-    <div> 
-      <p> <%= recipe.name %> </p>
-      <p> By <%= recipe.user.name %> <p>
-      <p> Total food items: <%= recipe.recipe_foods.count %>
-      <p> Total price: $<%= recipe.total_price %>
+  <% @recipes.includes(:user).each do |recipe| %>
+    <%= link_to user_recipe_url(recipe.user, recipe), :action => 'go' do %>
+      <div> 
+        <p> <%= recipe.name %> </p>
+        <p> By <%= recipe.user.name %> <p>
+        <p> Total food items: <%= recipe.recipe_foods.count %>
+        <p> Total price: $<%= recipe.total_price %>
 
-    </div>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</section>
