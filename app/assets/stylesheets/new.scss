@@ -55,3 +55,8 @@
     margin-right: 0.5rem;
   }
 }
+
+.food-table {
+  @include box(1rem);
+  text-align: center;
+}
