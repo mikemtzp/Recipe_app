@@ -1,0 +1,86 @@
+@import 'mixins';
+
+// All required common properties to make icons render reliably using Font Awesome CSS Pseudo-elements
+.icon::before {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.new-recipe {
+  margin-bottom: 1rem;
+
+  &::before {
+    font: var(--fa-font-solid);
+    content: '\f2e7';
+    margin-right: 0.5rem;
+  }
+}
+
+.remove::before {
+  font: var(--fa-font-solid);
+  content: '\f2ed';
+  margin-right: 0.5rem;
+}
+
+.new-field {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.back-to {
+  margin-top: 2rem;
+  position: relative;
+  top: 1rem;
+  transition: 0.5s;
+
+  &::before {
+    font: var(--fa-font-solid);
+    content: '\f137';
+    margin-right: 0.5rem;
+  }
+
+  &:hover {
+    transition: 0.5s;
+    color: $main-color;
+  }
+}
+
+.new-food {
+  margin-bottom: 1rem;
+
+  &::before {
+    font: var(--fa-font-solid);
+    content: '\f805';
+    margin-right: 0.5rem;
+  }
+}
+
+.table {
+  @include box(1rem);
+
+  text-align: center;
+  border-collapse: collapse;
+
+  & th { padding: 1rem; }
+
+  & td {
+    padding: 0.5rem;
+    border-right: 1px solid $black;
+
+    &:last-of-type { border-right: 0; }
+  }
+
+  & tr {
+    border-bottom: 1px solid $black;
+
+    &:last-of-type { border-bottom: 0; }
+  }
+
+  &-title {
+    background: $background-color;
+
+    & th:first-child { border-radius: 20px 0 0 0; }
+    & th:last-child { border-radius: 0 20px 0 0; }
+  }
+}

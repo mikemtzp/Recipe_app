@@ -15,5 +15,9 @@
     <li>
       <%= link_to 'Profile', user_url(current_user) %>
     </li>
+
+    <li>
+      <%= button_to "Logout", destroy_user_session_path, { method: :delete, data: { turbo:false }}%>
+    </li>
   </ul>
 </nav>

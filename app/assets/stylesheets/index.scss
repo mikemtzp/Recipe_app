@@ -1,5 +1,162 @@
 @import 'mixins';
 
 body {
-  background-color: $main-color;
+  min-height: 100vh;
+  background: $background-color;
+  font-family: $font;
+  overflow-x: hidden;
+
+  @include flex(column, center);
+
+  h2 { margin: 0 0 1.5rem 0; }
+  p { margin: 0 0 1rem 0; }
+
+  h1 {
+    margin: 0 0 1.5rem 0;
+    font-size: $section-title;
+  }
 }
+
+.flex-start { align-self: flex-start; }
+.flex-end { align-self: flex-end; }
+
+#user_remember_me {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+.login-container {
+  @include flex(column, center);
+  @include box(2rem);
+
+  width: 30%;
+  margin: auto;
+
+  &-links {
+    @include flex(column, center);
+  }
+}
+
+.sign-up {
+  margin-bottom: 1rem;
+
+  &-link {
+    @include bold-text;
+  }
+}
+
+.new_user {
+  @include flex(column, center);
+
+  & > * {
+    margin-bottom: 1rem;
+  }
+}
+
+.login-button {
+  padding: 0.3rem 2rem;
+  border-radius: 20px;
+  border: 0;
+  background-color: $white;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: $main-color;
+    color: $white;
+    transition: 0.5s;
+  }
+}
+
+.field {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  padding: 0.3rem 2rem 0.3rem 1rem;
+  border-radius: 20px;
+  border: none;
+  margin-left: 0.5rem;
+
+  &:focus {
+    box-shadow: 0 0 9px $black;
+    outline: none;
+  }
+}
+
+.hover-text {
+  transition: 0.5s;
+
+  &:hover {
+    color: $main-color;
+    transition: 0.5s;
+  }
+}
+
+.recipes {
+  width: 100%;
+}
+
+.recipe {
+  @include box(1rem);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 1rem 0;
+
+  &-title {
+    width: 50%;
+    text-align: start;
+
+    p,
+    h2 {
+      @include trim-text;
+    }
+  }
+}
+
+.ingredients-list {
+  margin-top: 15px;
+}
+
+hr {
+  border: 1px solid black;
+  width: 100%;
+  margin-top: 35px;
+}
+
+.action-button {
+  border: none;
+  border-radius: 5px;
+  padding: 3px 8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $main-color;
+    color: white;
+  }
+}
+
+.adjust-button-margin {
+  margin-top: 15px;
+}
+
+.signup {
+  flex-direction: column;
+
+  input {
+    padding: 3px 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+  }
+}
+
+.no-margin { margin: 0; }
+.italic { font-style: italic; }
