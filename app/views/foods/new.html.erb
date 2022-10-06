@@ -1,0 +1,11 @@
+<section id="public-recipes-list">
+  <h1>New food</h1>
+
+  <%= render "form", food: @food %>
+
+  <br>
+
+  <div>
+    <%= link_to "Back to foods", user_foods_url(current_user) %>
+  </div>
+</section>

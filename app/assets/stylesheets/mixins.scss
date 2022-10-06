@@ -1,0 +1,35 @@
+$secondary-color: #d46b32;
+$main-color: rgb(141, 28, 0);
+$background-color: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+$box-background-color: rgba(200, 200, 200, 0.2);
+$black: rgb(25, 25, 25);
+$white: #fff;
+$font: system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen, ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$section-title: 2.5rem;
+$font-title: 2rem;
+
+@mixin flex ($position, $justify) {
+  display: flex;
+  flex-direction: $position;
+  justify-content: $justify;
+  align-items: center;
+  margin: 0 auto auto auto;
+}
+
+@mixin box ($padding) {
+  padding: $padding;
+  background: $box-background-color;
+  border-radius: 20px;
+  box-shadow: 20px 15px 80px -25px $black;
+}
+
+@mixin bold-text {
+  font-weight: bolder;
+  color: $main-color;
+}
+
+@mixin trim-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

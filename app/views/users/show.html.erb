@@ -1,0 +1,12 @@
+<section id="public-recipes-list">
+  <p style="color: green"><%= notice %></p>
+
+  <%= render @user %>
+
+  <div>
+    <% if can? :modify, @user %>
+      <%= link_to "Edit Your profile", edit_user_path(@user) %> |
+    <% end %>
+    <%= link_to "Show all users", users_path %>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<section id="public-recipes-list">
+
+  <h1>Food</h1>
+
+  <%= link_to "New food", new_user_food_url, class: "login-button flex-end new-food" %>
+
+  <% if @foods.empty? %>
+    <p> Your food list is empty.</p>
+  <% else %>
+  <table class="table" id="food-list">
+      <tr class="table-title">
+        <th>Food</th>
+        <th>Measurement unit</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+      </tr>
+        <% @foods.each do |food| %>
+          <%= render food %>
+        <% end %>
+    </table>
+  <% end %>
+</section>

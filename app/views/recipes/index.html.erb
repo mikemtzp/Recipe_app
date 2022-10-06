@@ -1,0 +1,16 @@
+<section id="public-recipes-list">
+
+  <h1>Recipes</h1>
+
+  <%= link_to "New recipe", new_user_recipe_path, class: "login-button flex-end new-recipe" %>
+
+  <% if @recipes.empty? %>
+    <p>Your recipes list is empty.</p>
+  <% else %>
+    <div id="recipes" class="recipes">
+      <% @recipes.includes(:user).each do |recipe| %>
+        <%= render recipe %>
+      <% end %>
+    </div>
+  <% end %>
+</section>

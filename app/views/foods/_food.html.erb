@@ -1,0 +1,21 @@
+<tr>
+  <td>
+    <%= food.name %>
+  </td>
+
+  <td>
+    <%= food.measurement_unit %>
+  </td>
+
+  <td>
+    <%= "$#{food.price}" %>
+  </td>
+
+  <td>
+    <%= food.quantity %>
+  </td>
+
+  <td>
+    <%= button_to "Delete", user_food_url(current_user, food), method: :delete, class: "login-button remove" %>
+  </td>
+</tr>

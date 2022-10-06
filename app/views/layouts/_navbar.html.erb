@@ -1,0 +1,23 @@
+<nav>
+  <ul>
+    <li>
+      <%= link_to 'Public recipes', public_recipes_list_url %>
+    </li>
+
+    <li>
+      <%= link_to 'Your recipes', user_recipes_url(current_user) %>
+    </li>
+
+    <li>
+      <%= link_to 'Food list', user_foods_url(current_user) %>
+    </li>
+
+    <li>
+      <%= link_to 'Profile', user_url(current_user) %>
+    </li>
+
+    <li>
+      <%= button_to "Logout", destroy_user_session_path, { method: :delete, data: { turbo:false }}%>
+    </li>
+  </ul>
+</nav>

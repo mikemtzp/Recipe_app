@@ -1,0 +1,33 @@
+@import 'mixins';
+
+#public-recipes-list {
+  @include flex(column, center);
+
+  width: 80%;
+}
+
+.public-link {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.public-recipe {
+  @include flex(row, space-between);
+  @include box(1rem);
+
+  text-align: center;
+
+  &-section {
+    width: 50%;
+
+    &__title {
+      font-size: $font-title;
+
+      @include trim-text;
+    }
+
+    &__username { font-style: italic; }
+  }
+}
+
+span { @include bold-text; }
