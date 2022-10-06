@@ -3,11 +3,15 @@
 
   <% @recipes.includes(:user).each do |recipe| %>
     <%= link_to user_recipe_url(recipe.user, recipe), :action => 'go' do %>
-      <div> 
-        <p> <%= recipe.name %> </p>
-        <p> By <%= recipe.user.name %> </p>
-        <p> Total food items: <%= recipe.recipe_foods.count %> </p>
-        <p> Total price: $<%= recipe.total_price %> </p>
+      <div class="public-recipe">
+        <div> 
+          <p> <%= recipe.name %> </p>
+          <p> By <%= recipe.user.name %> </p>
+        </div>
+        <div>
+          <p> Total food items: <%= recipe.recipe_foods.count %> </p>
+          <p> Total price: $<%= recipe.total_price %> </p>
+        </div>
       </div>
     <% end %>
   <% end %>

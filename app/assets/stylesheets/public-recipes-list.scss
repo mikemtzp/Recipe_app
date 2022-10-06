@@ -5,4 +5,8 @@
   width: 80%;
 }
 
+.public-recipe {
+  @include flex(row, center)
+}
+
 

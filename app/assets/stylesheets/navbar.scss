@@ -4,7 +4,7 @@ nav {
   @include flex(row, center);
 
   background-color: $main-color;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100vw;
   margin-bottom: 75px;
