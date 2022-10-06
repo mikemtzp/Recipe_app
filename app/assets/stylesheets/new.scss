@@ -1,3 +1,5 @@
+@import 'mixins';
+
 .new-field {
   text-align: center;
   margin-bottom: 1rem;
@@ -7,10 +9,16 @@
   margin-top: 2rem;
   position: relative;
   top: 1rem;
+  transition: 0.5s;
 
   &::before {
     font: var(--fa-font-solid);
     content: '\f137';
     margin-right: 0.5rem;
+  }
+
+  &:hover {
+    transition: 0.5s;
+    color: $main-color;
   }
 }
