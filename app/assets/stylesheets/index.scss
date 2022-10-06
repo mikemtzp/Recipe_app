@@ -25,9 +25,9 @@ body {
   @include flex(column, center);
   width: 30%;
   padding: 2rem;
-  background: rgba(200, 200, 200, 0.2);
+  background: $box-background-color;
   border-radius: 20px;
-  box-shadow: 20px 15px 80px -25px #000;
+  box-shadow: 20px 15px 80px -25px $black;
 
   &-links {
     @include flex(column, center);
@@ -52,7 +52,19 @@ body {
   border: 0;
 }
 
+.field {
+  display: flex;
+  align-items: center;
+}
+
 .input {
-  padding: 0.3rem 2rem;
+  padding: 0.3rem 2rem 0.3rem 1rem;
   border-radius: 20px;
+  border: none;
+  margin-left: 0.5rem;
+
+  &:focus {
+    box-shadow: 0 0 9px $black;
+    outline: none;
+  }
 }
