@@ -7,7 +7,7 @@ nav {
   position: sticky;
   top: 0;
   width: 100vw;
-  margin-bottom: 75px;
+  margin-bottom: 1rem;
 
   ul {
     @include flex(row, center);
