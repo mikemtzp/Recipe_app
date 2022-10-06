@@ -148,5 +148,15 @@ hr {
   margin-top: 15px;
 }
 
+.sign-up {
+  flex-direction: column;
+
+  input {
+    padding: 3px 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+  }
+}
+
 .no-margin { margin: 0; }
 .italic { font-style: italic; }
