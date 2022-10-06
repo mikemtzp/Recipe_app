@@ -6,11 +6,9 @@
   <div>
     <% if can? :modify, @user %>
       <%= link_to "Edit Your profile", edit_user_path(@user) %>
-    <% end %>
-    <%= link_to "Back to users", users_path %>
-    <% if @user == current_user %>
       <%= link_to "Food list", user_foods_url(current_user) %>
       <%= link_to "Recipe list", user_recipes_url(current_user) %>
     <% end %>
+    <%= link_to "Back to users", users_path %>
   </div>
 </section>
