@@ -2,3 +2,15 @@
   text-align: center;
   margin-bottom: 1rem;
 }
+
+.back-to {
+  margin-top: 2rem;
+  position: relative;
+  top: 1rem;
+
+  &::before {
+    font: var(--fa-font-solid);
+    content: '\f137';
+    margin-right: 0.5rem;
+  }
+}
