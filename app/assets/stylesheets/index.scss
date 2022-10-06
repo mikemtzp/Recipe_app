@@ -144,9 +144,17 @@ hr {
   }
 }
 
-.edit-user {
-  .login-button {
-    margin-top: 15px;
+.adjust-button-margin {
+  margin-top: 15px;
+}
+
+.signup {
+  flex-direction: column;
+
+  input {
+    padding: 3px 5px;
+    border-radius: 5px;
+    border: 1px solid black;
   }
 }
 
