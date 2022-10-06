@@ -7,10 +7,8 @@ body {
 
   @include flex(column, center);
 
-  h2,
-  p {
-    margin: 0 0 1rem 0;
-  }
+  h2 { margin: 0 0 1.5rem 0; }
+  p { margin: 0 0 1rem 0; }
 
   h1 { 
     margin: 0 0 1.5rem 0;
@@ -35,6 +33,7 @@ a {
   @include flex(column, center);
   @include box(2rem);
   width: 30%;
+  margin: auto;
 
   &-links {
     @include flex(column, center);
