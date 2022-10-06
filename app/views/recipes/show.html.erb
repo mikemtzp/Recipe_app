@@ -18,7 +18,10 @@
 
   <hr>
 
-  <table class="ingredients-list table">
+  <% if @recipe.recipe_foods.count < 1 %>
+    <p> The ingredient list is empty. </p>
+  <% else %>
+    <table class="ingredients-list table">
       <tr>
         <th>Food</th>
         <th>Quantity</th>
@@ -38,4 +41,5 @@
           </tr>
         <% end %>
     </table>
-  </section>
+  <% end %>
+</section>
