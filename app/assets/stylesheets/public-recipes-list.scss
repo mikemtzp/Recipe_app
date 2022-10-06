@@ -7,11 +7,12 @@
 
 .public-link {
   width: 100%;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .public-recipe {
   @include flex(row, space-between);
+  @include box(1rem);
   text-align: center;
 
   &-section {
@@ -22,14 +23,7 @@
       font-size: $font-title;
       // width: 0%;
     }
-
-    &__items {
-      // width: 50%;
-    }
   }
-
-
- 
 }
 
 

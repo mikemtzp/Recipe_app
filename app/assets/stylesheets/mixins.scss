@@ -15,3 +15,10 @@ $font-title: 1.8rem;
   align-items: center;
   margin: 0 auto auto auto;
 }
+
+@mixin box ($padding) {
+  padding: $padding;
+  background: $box-background-color;
+  border-radius: 20px;
+  box-shadow: 20px 15px 80px -25px $black;
+}

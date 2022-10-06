@@ -33,12 +33,8 @@ a {
 
 .login-container {
   @include flex(column, center);
-
+  @include box(2rem);
   width: 30%;
-  padding: 2rem;
-  background: $box-background-color;
-  border-radius: 20px;
-  box-shadow: 20px 15px 80px -25px $black;
 
   &-links {
     @include flex(column, center);
