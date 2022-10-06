@@ -45,7 +45,8 @@ a {
   margin-bottom: 1rem;
 
   &-link {
-    @include bold-text; }
+    @include bold-text;
+  }
 }
 
 .new_user {
@@ -114,7 +115,8 @@ a {
     width: 50%;
     text-align: start;
 
-    p, h2 {
+    p,
+    h2 {
       @include trim-text;
     }
   }
