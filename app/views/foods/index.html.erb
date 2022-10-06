@@ -1,7 +1,8 @@
 <section id="public-recipes-list">
-  <p style="color: green"><%= notice %></p>
 
-  <%= link_to "New food", new_user_food_url %>
+  <h1>Food</h1>
+
+  <%= link_to "New food", new_user_food_url, class: "login-button flex-end new-food" %>
 
   <% if @foods.empty? %>
     <p> Your food list is empty.</p>

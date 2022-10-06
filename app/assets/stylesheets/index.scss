@@ -117,25 +117,3 @@ a {
 .no-margin { margin: 0; }
 .italic { font-style: italic; }
 
-// All required common properties to make icons render reliably using Font Awesome CSS Pseudo-elements
-.icon::before {
-  display: inline-block;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-}
-
-.new-recipe {
-  margin-bottom: 1rem;
-
-  &::before {
-    font: var(--fa-font-solid);
-    content: '\f2e7';
-    margin-right: 0.5rem;
-  }
-}
-
-.remove::before {
-  font: var(--fa-font-solid);
-  content: '\f2ed';
-  margin-right: 0.5rem;
-}
