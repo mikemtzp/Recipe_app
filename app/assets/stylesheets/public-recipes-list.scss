@@ -22,16 +22,13 @@
 
     &__title {
       font-size: $font-title;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     &__username { font-style: italic; }
   }
-}
-
-.public-recipe-section__title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 span { @include bold-text; }
