@@ -94,8 +94,45 @@ a {
   -webkit-font-smoothing: antialiased;
 }
 
-.new-recipe::before {
-  font: var(--fa-font-solid);
-  content: '\f2e7';
-  margin-right: 0.5rem;
+.new-recipe {
+  margin-bottom: 1rem;
+
+  &::before {
+    font: var(--fa-font-solid);
+    content: '\f2e7';
+    margin-right: 0.5rem;
+  }
+}
+
+.hover-text {
+  transition: 0.5s;
+
+  &:hover {
+    color: $main-color;
+    transition: 0.5s;
+  }
+}
+
+.recipes {
+  width: 100%;
+}
+
+.recipe {
+  @include box(1rem);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 1rem 0;
+
+  &-title {
+    
+    width: 50%;
+    text-align: start;
+  }
+}
+
+.no-margin {
+  margin: 0;
+  min-height: 10vh;
 }

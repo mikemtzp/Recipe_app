@@ -1,15 +1,19 @@
-  <div>
-  <%= link_to user_recipe_url(current_user, recipe) do %>
-    <h2>
-      <%= recipe.name %>
-    </h2>
-  <% end %>
-
-    <p>
-      <%= recipe.description %>
-    </p>
+<div class="recipe">
+  <div class="recipe-title">
+    <%= link_to user_recipe_url(current_user, recipe) do %>
+      <h2 class="flex-start hover-text title">
+        <%= recipe.name %>
+      </h2>
+    <% end %>
 
     <% if can? :destroy, recipe %>
-      <%= button_to "Remove", user_recipe_path(current_user, recipe), method: :delete %>
+      <%= button_to "Remove", user_recipe_path(current_user, recipe), method: :delete, class: "login-button" %>
     <% end %>
   </div>
+
+  <div class="recipe-title">
+    <p class="no-margin">
+      <%= recipe.description %>
+    </p>
+  </div>
+</div>

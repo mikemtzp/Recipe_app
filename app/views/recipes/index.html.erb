@@ -7,7 +7,7 @@
   <% if @recipes.empty? %>
     <p>Your recipes list is empty.</p>
   <% else %>
-    <div id="recipes">
+    <div id="recipes" class="recipes">
       <% @recipes.includes(:user).each do |recipe| %>
         <%= render recipe %>
       <% end %>
