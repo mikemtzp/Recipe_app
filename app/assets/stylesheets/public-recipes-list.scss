@@ -1,5 +1,8 @@
 @import 'mixins';
 
 #public-recipes-list {
-  @include flex(row, center);
+  @include flex(column, center);
+  width: 80%;
 }
+
+
