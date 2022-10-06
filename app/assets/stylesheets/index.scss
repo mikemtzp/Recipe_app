@@ -16,9 +16,8 @@ body {
   }
 }
 
-.flex-start {
-  align-self: flex-start;
-}
+.flex-start { align-self: flex-start; }
+.flex-end { align-self: flex-end; }
 
 #user_remember_me {
   cursor: pointer;
@@ -86,4 +85,17 @@ a {
     box-shadow: 0 0 9px $black;
     outline: none;
   }
+}
+
+// All required common properties to make icons render reliably using Font Awesome CSS Pseudo-elements
+.icon::before {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.new-recipe::before {
+  font: var(--fa-font-solid);
+  content: '\f2e7';
+  margin-right: 0.5rem;
 }
