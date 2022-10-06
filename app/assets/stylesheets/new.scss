@@ -56,7 +56,30 @@
   }
 }
 
-.food-table {
+.table {
   @include box(1rem);
   text-align: center;
+  border-collapse: collapse;
+
+  & th { padding: 1rem; }
+
+  & td {
+    padding: 0.5rem;
+    border-right: 1px solid $black;
+
+    &:last-of-type { border-right: 0; }
+  }
+
+  & tr {
+    border-bottom: 1px solid $black;
+
+    &:last-of-type { border-bottom: 0; }
+  }
+
+  &-title {
+    background: $background-color;
+
+    & th:first-child { border-radius: 20px 0 0 0; }
+    & th:last-child { border-radius: 0 20px 0 0; }
+  }
 }
