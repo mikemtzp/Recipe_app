@@ -109,12 +109,14 @@ a {
   justify-content: space-between;
   align-items: center;
   margin: 0 0 1rem 0;
-  overflow: hidden;
-  white-space: nowrap;
 
   &-title {
     width: 50%;
     text-align: start;
+
+    p, h2 {
+      @include trim-text;
+    }
   }
 }
 
