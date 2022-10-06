@@ -5,8 +5,31 @@
   width: 80%;
 }
 
+.public-link {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
 .public-recipe {
-  @include flex(row, center)
+  @include flex(row, space-between);
+  text-align: center;
+
+  &-section {
+    width: 50%;
+
+    &__title {
+      // display: block;
+      font-size: $font-title;
+      // width: 0%;
+    }
+
+    &__items {
+      // width: 50%;
+    }
+  }
+
+
+ 
 }
 
 
