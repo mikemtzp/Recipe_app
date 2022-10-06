@@ -1,9 +1,11 @@
-<h1>Select one ingredient from your food list</h1>
+<section id="public-recipes-list">
+  <h1>Select one ingredient from your food list</h1>
 
-<%= render "form", recipe_food: @recipe_food %>
+  <%= render "form", recipe_food: @recipe_food %>
 
-<br>
+  <br>
 
-<div>
-  <%= link_to "Back to recipe foods", user_recipes_path(current_user) %>
-</div>
+  <div>
+    <%= link_to "Back to recipe", :back %>
+  </div>
+</section>
