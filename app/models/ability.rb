@@ -7,6 +7,7 @@ class Ability
     can :read, Recipe
     can :destroy, Recipe, user: user
     can :modify, Recipe, user: user
+    can :modify, User, id: user.id
 
     # The third argument is an optional hash of conditions to further filter the
     # objects.
