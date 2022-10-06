@@ -18,7 +18,7 @@
         <th>Food</th>
         <th>Quantity</th>
         <th>Price</th>
-        <% if can? :destroy, @recipe %>
+        <% if can? :modify, @recipe %>
           <th>Actions</th>
         <% end %>
       </tr>
@@ -27,7 +27,7 @@
             <td> <%= ingredient.food.name %></td>
             <td> <%= ingredient.quantity %> </td>
             <td> <%= ingredient.total_price %> </td>
-            <% if can? :destroy, @recipe %>
+            <% if can? :modify, @recipe %>
               <td> <%= button_to 'Remove', user_recipe_recipe_food_path(current_user, @recipe, ingredient), method: :delete %> </td>
             <% end %>
           </tr>

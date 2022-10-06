@@ -5,7 +5,8 @@ class Ability
     return unless user.present?
 
     can :read, Recipe
-    can :destroy, Recipe, user:
+    can :destroy, Recipe, user: user
+    can :modify, Recipe, user: user
 
     # The third argument is an optional hash of conditions to further filter the
     # objects.
