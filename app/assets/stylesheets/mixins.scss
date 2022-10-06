@@ -22,3 +22,8 @@ $font-title: 2rem;
   border-radius: 20px;
   box-shadow: 20px 15px 80px -25px $black;
 }
+
+@mixin bold-text {
+  font-weight: bolder;
+  color: $main-color
+}

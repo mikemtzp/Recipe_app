@@ -11,32 +11,32 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="new-field">
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "input", placeholder: "Ramen" %>
   </div>
 
-  <div>
+  <div class="new-field">
     <%= form.label :preparation_time, style: "display: block" %>
-    <%= form.number_field :preparation_time %>
+    <%= form.number_field :preparation_time, class: "input", placeholder: "0" %>
   </div>
 
-  <div>
+  <div class="new-field">
     <%= form.label :cooking_time, style: "display: block" %>
-    <%= form.number_field :cooking_time %>
+    <%= form.number_field :cooking_time, class: "input", placeholder: "0" %>
   </div>
 
-  <div>
+  <div class="new-field">
     <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
+    <%= form.text_field :description, class: "input", placeholder: "Cook noodles for 2 minutes" %>
   </div>
 
-  <div>
-    <%= form.label :public, style: "display: block" %>
+  <div class="new-field">
+    <%= form.label :public %>
     <%= form.check_box :public %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "login-button" %>
   </div>
 <% end %>

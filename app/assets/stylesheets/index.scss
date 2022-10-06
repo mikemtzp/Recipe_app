@@ -16,9 +16,8 @@ body {
   }
 }
 
-.flex-start {
-  align-self: flex-start;
-}
+.flex-start { align-self: flex-start; }
+.flex-end { align-self: flex-end; }
 
 #user_remember_me {
   cursor: pointer;
@@ -44,8 +43,7 @@ a {
   margin-bottom: 1rem;
 
   &-link {
-    font-weight: bolder;
-    color: $main-color
+    @include bold-text
   }
 }
 
@@ -88,3 +86,34 @@ a {
     outline: none;
   }
 }
+
+.hover-text {
+  transition: 0.5s;
+
+  &:hover {
+    color: $main-color;
+    transition: 0.5s;
+  }
+}
+
+.recipes {
+  width: 100%;
+}
+
+.recipe {
+  @include box(1rem);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 1rem 0;
+
+  &-title {
+    width: 50%;
+    text-align: start;
+  }
+}
+
+.no-margin { margin: 0; }
+.italic { font-style: italic; }
+
