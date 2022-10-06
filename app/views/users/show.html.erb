@@ -1,12 +1,14 @@
-<p style="color: green"><%= notice %></p>
+<section id="public-recipes-list">
+  <p style="color: green"><%= notice %></p>
 
-<%= render @user %>
+  <%= render @user %>
 
-<div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
-  <% if @user == current_user %>
-    <%= link_to "Food list", user_foods_url(current_user) %>
-    <%= link_to "Recipe list", user_recipes_url(current_user) %>
-  <% end %>
-</div>
+  <div>
+    <%= link_to "Edit this user", edit_user_path(@user) %> |
+    <%= link_to "Back to users", users_path %>
+    <% if @user == current_user %>
+      <%= link_to "Food list", user_foods_url(current_user) %>
+      <%= link_to "Recipe list", user_recipes_url(current_user) %>
+    <% end %>
+  </div>
+</section>
