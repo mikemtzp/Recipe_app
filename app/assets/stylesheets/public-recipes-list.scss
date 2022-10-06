@@ -19,10 +19,10 @@
     width: 50%;
 
     &__title {
-      // display: block;
       font-size: $font-title;
-      // width: 0%;
     }
+
+    &__username { font-style: italic; }
   }
 }
 
