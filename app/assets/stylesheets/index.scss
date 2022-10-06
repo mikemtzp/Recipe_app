@@ -44,8 +44,7 @@ a {
   margin-bottom: 1rem;
 
   &-link {
-    font-weight: bolder;
-    color: $main-color
+    @include bold-text
   }
 }
 
