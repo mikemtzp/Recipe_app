@@ -10,18 +10,10 @@
 .new-recipe {
   margin-bottom: 1rem;
 
-  &::before {
-    font: var(--fa-font-solid);
-    content: '\f2e7';
-    margin-right: 0.5rem;
-  }
+  &::before { @include icon('\f2e7'); }
 }
 
-.remove::before {
-  font: var(--fa-font-solid);
-  content: '\f2ed';
-  margin-right: 0.5rem;
-}
+.remove::before { @include icon('\f2ed'); }
 
 .new-field {
   text-align: center;
@@ -34,11 +26,7 @@
   top: 1rem;
   transition: 0.5s;
 
-  &::before {
-    font: var(--fa-font-solid);
-    content: '\f137';
-    margin-right: 0.5rem;
-  }
+  &::before { @include icon('\f137'); }
 
   &:hover {
     transition: 0.5s;
@@ -46,15 +34,7 @@
   }
 }
 
-.new-food {
-  margin-bottom: 1rem;
-
-  &::before {
-    font: var(--fa-font-solid);
-    content: '\f805';
-    margin-right: 0.5rem;
-  }
-}
+.new-food::before { @include icon('\f805'); }
 
 .table {
   @include box(1rem);

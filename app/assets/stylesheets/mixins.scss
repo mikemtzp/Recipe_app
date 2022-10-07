@@ -33,3 +33,9 @@ $font-title: 2rem;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+@mixin icon($unicode) {
+  font: var(--fa-font-solid);
+  content: '#{$unicode}';
+  margin-right: 0.5rem;
+}
