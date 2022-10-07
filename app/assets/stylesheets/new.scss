@@ -7,18 +7,11 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.new-recipe {
-  margin-bottom: 1rem;
-
-  &::before { @include icon('\f2e7'); }
-}
-
+.new-recipe::before { @include icon('\f2e7'); }
 .remove::before { @include icon('\f2ed'); }
-
-.new-field {
-  text-align: center;
-  margin-bottom: 1rem;
-}
+.new-food::before { @include icon('\f805'); }
+.edit-recipe::before { @include icon('\f044'); }
+.new-shopping-list::before { @include icon('\f022'); }
 
 .back-to {
   margin-top: 2rem;
@@ -34,7 +27,10 @@
   }
 }
 
-.new-food::before { @include icon('\f805'); }
+.new-field {
+  text-align: center;
+  margin-bottom: 1rem;
+}
 
 .table {
   @include box(1rem);

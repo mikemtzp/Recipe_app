@@ -6,11 +6,11 @@
     <p> <%= @recipe.description %> </p>
   </div>
 
-  <div>
-    <%= link_to "Generate shopping list", general_shopping_list_path, class: "login-button" %>
+  <div class="recipe-details-buttons">
+    <%= link_to "Generate shopping list", general_shopping_list_path, class: "login-button new-shopping-list" %>
     <% if can? :modify, @recipe %>
-      <%= link_to "Add ingredient", new_user_recipe_recipe_food_url(current_user, @recipe), class: "login-button" %>
-      <%= link_to 'Edit recipe', edit_user_recipe_url, class: "login-button" %>
+      <%= link_to "Add ingredient", new_user_recipe_recipe_food_url(current_user, @recipe), class: "login-button new-food" %>
+      <%= link_to 'Edit recipe', edit_user_recipe_url, class: "login-button edit-recipe" %>
     <% end %>
   </div>
 

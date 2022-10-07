@@ -8,11 +8,11 @@ body {
 
   @include flex(column, center);
 
-  h2 { margin: 0 0 1.5rem 0; }
+  h2 { margin: $margin-title; }
   p { margin: 0 0 1rem 0; }
 
   h1 {
-    margin: 0 0 1.5rem 0;
+    margin: $margin-title;
     font-size: $section-title;
   }
 }
@@ -24,9 +24,7 @@ body {
 .no-margin { margin: 0; }
 .italic { font-style: italic; }
 
-#user_remember_me {
-  cursor: pointer;
-}
+#user_remember_me { cursor: pointer; }
 
 a {
   text-decoration: none;
@@ -48,17 +46,13 @@ a {
 .sign-up {
   margin-bottom: 1rem;
 
-  &-link {
-    @include bold-text;
-  }
+  &-link { @include bold-text; }
 }
 
 .new_user {
   @include flex(column, center);
 
-  & > * {
-    margin-bottom: 1rem;
-  }
+  & > * { margin-bottom: 1rem; }
 }
 
 .login-button {
@@ -156,9 +150,19 @@ hr {
 }
 
 .recipe-details {
+  @include box(1rem);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  margin-bottom: 1rem;
+}
+
+.recipe-details-buttons {
+  margin-top: 2rem;
+
+  & a { 
+    margin-right: 1rem;
+
+    &:last-of-type { margin: 0; }
+  }
 }
