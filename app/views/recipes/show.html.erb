@@ -1,10 +1,8 @@
 <section id="public-recipes-list">
-  <p style="color: green"><%= notice %></p>
-
-  <div>
+  <div class="recipe-details">
     <h1> <%= @recipe.name %> </h1>
-    <p> Preparation time: <%= @recipe.preparation_time %> minute(s). </p>
-    <p> Cooking time: <%= @recipe.cooking_time %> minute(s). </p>
+    <p> Preparation time: <span> <%= @recipe.preparation_time %> </span>minute(s)</p>
+    <p> Cooking time: <span> <%= @recipe.cooking_time %> </span>minute(s)</p>
     <p> <%= @recipe.description %> </p>
   </div>
 
@@ -21,8 +19,8 @@
   <% if @recipe.recipe_foods.count < 1 %>
     <p> The ingredient list is empty. </p>
   <% else %>
-    <table class="ingredients-list table">
-      <tr>
+    <table class="table">
+      <tr class="table-title">
         <th>Food</th>
         <th>Quantity</th>
         <th>Price</th>
@@ -36,7 +34,7 @@
             <td> <%= ingredient.quantity %> </td>
             <td> <%= ingredient.total_price %> </td>
             <% if can? :modify, @recipe %>
-              <td> <%= button_to 'Delete', user_recipe_recipe_food_path(current_user, @recipe, ingredient), method: :delete, class: 'remove action-button' %> </td>
+              <td> <%= button_to 'Delete', user_recipe_recipe_food_path(current_user, @recipe, ingredient), method: :delete, class: 'login-button remove' %> </td>
             <% end %>
           </tr>
         <% end %>
