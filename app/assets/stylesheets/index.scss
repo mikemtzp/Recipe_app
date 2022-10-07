@@ -8,21 +8,23 @@ body {
 
   @include flex(column, center);
 
-  h2 { margin: 0 0 1.5rem 0; }
+  h2 { margin: $margin-title; }
   p { margin: 0 0 1rem 0; }
 
   h1 {
-    margin: 0 0 1.5rem 0;
+    margin: $margin-title;
     font-size: $section-title;
   }
 }
 
 .flex-start { align-self: flex-start; }
 .flex-end { align-self: flex-end; }
+.margin-top { margin-top: 1rem; }
+.margin-bottom { margin-bottom: 1rem; }
+.no-margin { margin: 0; }
+.italic { font-style: italic; }
 
-#user_remember_me {
-  cursor: pointer;
-}
+#user_remember_me { cursor: pointer; }
 
 a {
   text-decoration: none;
@@ -44,17 +46,13 @@ a {
 .sign-up {
   margin-bottom: 1rem;
 
-  &-link {
-    @include bold-text;
-  }
+  &-link { @include bold-text; }
 }
 
 .new_user {
   @include flex(column, center);
 
-  & > * {
-    margin-bottom: 1rem;
-  }
+  & > * { margin-bottom: 1rem; }
 }
 
 .login-button {
@@ -98,9 +96,7 @@ a {
   }
 }
 
-.recipes {
-  width: 100%;
-}
+.recipes { width: 100%; }
 
 .recipe {
   @include box(1rem);
@@ -122,14 +118,13 @@ a {
   }
 }
 
-.ingredients-list {
-  margin-top: 15px;
-}
-
 hr {
-  border: 1px solid black;
+  background-color: $black;
+  border: none;
   width: 100%;
-  margin-top: 35px;
+  height: 4px;
+  border-radius: 20px;
+  margin: 2rem 0 2rem 0;
 }
 
 .action-button {
@@ -144,10 +139,6 @@ hr {
   }
 }
 
-.adjust-button-margin {
-  margin-top: 15px;
-}
-
 .signup {
   flex-direction: column;
 
@@ -158,5 +149,20 @@ hr {
   }
 }
 
-.no-margin { margin: 0; }
-.italic { font-style: italic; }
+.recipe-details {
+  @include box(1rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.recipe-details-buttons {
+  margin-top: 2rem;
+
+  & a { 
+    margin-right: 1rem;
+
+    &:last-of-type { margin: 0; }
+  }
+}

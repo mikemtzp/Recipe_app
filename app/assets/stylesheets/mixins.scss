@@ -7,6 +7,7 @@ $white: #fff;
 $font: system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen, ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 $section-title: 2.5rem;
 $font-title: 2rem;
+$margin-title: 0 0 1.5rem 0;
 
 @mixin flex ($position, $justify) {
   display: flex;
@@ -32,4 +33,10 @@ $font-title: 2rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+@mixin icon($unicode) {
+  font: var(--fa-font-solid);
+  content: '#{$unicode}';
+  margin-right: 0.5rem;
 }
