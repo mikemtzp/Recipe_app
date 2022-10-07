@@ -3,9 +3,7 @@
 
   <%= render "form", food: @food %>
 
-  <br>
-
   <div>
-    <%= link_to "Back to foods", user_foods_url(current_user) %>
+    <%= link_to "Back to Food list", user_foods_url(current_user), class: "back-to" %>
   </div>
 </section>
